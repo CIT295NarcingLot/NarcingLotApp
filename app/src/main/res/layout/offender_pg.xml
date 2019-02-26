@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                             android:layout_height="match_parent" android:background="@drawable/gradient">
+                                             android:layout_height="match_parent" android:background="@drawable/gradient"><!-- Adds the background gradient -->
+
+    <!-- Adds a white background so it is easier to see the text -->
     <View
             android:layout_width="325dp"
             android:layout_height="669dp"
@@ -11,6 +13,8 @@
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:visibility="visible"/>
+
+    <!-- Narcing Lot Banner -->
     <TextView
             android:text="Narcing Lot"
             android:layout_width="wrap_content"
@@ -24,6 +28,8 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="0.496"/>
+
+    <!-- Offender Page Sub Banner -->
     <TextView
             android:text="Offender Page"
             android:layout_width="154dp"
@@ -36,6 +42,8 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/ModelEnter"
             app:layout_constraintHorizontal_bias="0.497" app:layout_constraintVertical_bias="0.087"/>
+
+    <!-- Car Model Text Enter -->
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -46,6 +54,8 @@
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
             app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+
+    <!-- Car Color Text enter -->
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -57,6 +67,8 @@
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
             android:layout_marginTop="44dp"
             app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+
+    <!-- Car plate # enter -->
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -68,6 +80,8 @@
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
             android:layout_marginTop="84dp"
             app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+
+    <!-- State the car is registered in enter -->
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -79,6 +93,8 @@
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
             android:layout_marginTop="124dp"
             app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+
+    <!-- car vin # enter -->
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -90,6 +106,8 @@
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
             android:layout_marginTop="164dp"
             app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+
+    <!-- car make enter -->
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -101,6 +119,8 @@
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
             android:layout_marginTop="80dp"
             app:layout_constraintTop_toBottomOf="@+id/OffenderBanner"/>
+
+    <!-- Make label -->
     <TextView
             android:text="Make:"
             android:layout_width="99dp"
@@ -111,6 +131,8 @@
             android:layout_marginStart="36dp" android:layout_marginTop="40dp"
             app:layout_constraintTop_toBottomOf="@+id/OffenderSubB" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp"/>
+
+    <!-- Model label -->
     <TextView
             android:text="Model:"
             android:layout_width="99dp"
@@ -123,6 +145,8 @@
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="4dp"/>
+
+    <!-- Color label -->
     <TextView
             android:text="Color:"
             android:layout_width="99dp"
@@ -135,6 +159,8 @@
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Plate # label -->
     <TextView
             android:text="Plate #: "
             android:layout_width="99dp"
@@ -142,11 +168,13 @@
             android:gravity="center"
             android:id="@+id/PlateLabel" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" android:layout_marginTop="76dp"
+            android:layout_marginStart="36dp" android:layout_marginTop="84dp"
             app:layout_constraintTop_toBottomOf="@+id/MakeLabel" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Registered state label -->
     <TextView
             android:text="Reg. State:"
             android:layout_width="99dp"
@@ -159,6 +187,8 @@
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- vin # label -->
     <TextView
             android:text="VIN #:"
             android:layout_width="99dp"
@@ -171,6 +201,8 @@
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Pick pic label -->
     <TextView
             android:text="Submit a picture of the Infraction"
             android:layout_width="wrap_content"
@@ -179,8 +211,10 @@
             android:textColor="@color/colorPrimary" android:layout_marginTop="56dp"
             app:layout_constraintTop_toBottomOf="@+id/VINEnter"
             app:layout_constraintEnd_toEndOf="@+id/view" app:layout_constraintStart_toStartOf="@+id/view"/>
+
+    <!-- Button to open the Camera -->
     <Button
-            android:text="Open Camra"
+            android:text="Open Camera"
             android:layout_width="wrap_content"
             android:layout_height="41dp"
             android:id="@+id/button" app:layout_constraintEnd_toStartOf="@+id/button2" android:layout_marginEnd="8dp"
@@ -188,6 +222,8 @@
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@+id/textView11"/>
+
+    <!-- Button to select a picture -->
     <Button
             android:text="Pick Picture"
             android:layout_width="wrap_content"
@@ -195,6 +231,8 @@
             android:id="@+id/button2" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="44dp"
             android:layout_marginRight="44dp" android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@+id/textView11"/>
+
+    <!-- Button to open the next page -->
     <Button
             android:text="Next Page"
             android:layout_width="wrap_content"
