@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NarcingLotApp</string>
+    <string name="narking_lot">Narking Lot</string>
+    <string name="sign_in">Sign In</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="guest">Guest</string>
 </resources>
