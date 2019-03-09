@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@drawable/gradient" > <!-- Adds the background gradient -->
+
+    <!-- Adds white background -->
+    <View
+            android:layout_width="325dp"
+            android:layout_height="669dp"
+            android:background="#ffffff"
+            android:id="@+id/view2" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:visibility="visible"
+    />
+
+    <!-- Adds title banner -->
+    <TextView
+            android:text="Offender Page"
+            android:layout_width="154dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:id="@+id/locationSubB"
+            android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/ModelEnter"
+            app:layout_constraintVertical_bias="0.087"
+            android:layout_marginTop="104dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/view2" app:layout_constraintEnd_toEndOf="@+id/view2"/>
+
+
+    <!-- Adds sub banner-->
+    <TextView
+            android:text="Narcing Lot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/locationBanner" android:typeface="normal"
+            android:textSize="40sp" android:textStyle="bold" android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="76dp" android:layout_marginStart="76dp" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="@+id/view2" app:layout_constraintHorizontal_bias="0.0"/>
+
+
+    <!-- Adds location label -->
+    <TextView
+            android:text="Location:"
+            android:layout_width="111dp"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:id="@+id/gLocationLabel" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="64dp"
+            android:layout_marginStart="64dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" android:textSize="18sp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/locationSubB"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/streetLabel"
+            app:layout_constraintVertical_bias="0.59"/>
+
+
+    <!-- Adds address label -->
+    <TextView
+            android:text="Street Address:"
+            android:layout_width="140dp"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:id="@+id/streetLabel" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" android:textSize="18sp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/view2" android:layout_marginRight="8dp"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="452dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"/>
+
+
+    <!-- Adds city label -->
+    <TextView
+            android:text="City:"
+            android:layout_width="94dp"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:id="@+id/cityLabel" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="64dp"
+            android:layout_marginStart="64dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" android:textSize="18sp"
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/streetLabel"/>
+
+
+    <!-- Adds state label -->
+    <TextView
+            android:text="State:"
+            android:layout_width="99dp"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:id="@+id/stateLabel" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" android:textSize="18sp"
+            android:layout_marginTop="28dp" app:layout_constraintTop_toBottomOf="@+id/cityLabel"/>
+
+
+    <!-- Adds zip label -->
+    <TextView
+            android:text="ZIP:"
+            android:layout_width="99dp"
+            android:layout_height="38dp"
+            android:gravity="center"
+            android:id="@+id/zipLabel" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" android:textSize="18sp"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/stateLabel"/>
+
+
+    <!-- Adds location enter -->
+    <EditText
+            android:layout_width="152dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/locationEnter"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toEndOf="@+id/gLocationLabel" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.382"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/streetEnter"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/locationSubB"
+            app:layout_constraintVertical_bias="0.793"/>
+
+
+    <!-- Adds address enter -->
+    <EditText
+            android:layout_width="152dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/streetEnter"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toEndOf="@+id/streetLabel" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginBottom="20dp" app:layout_constraintBottom_toTopOf="@+id/cityEnter"/>
+
+
+    <!-- Adds city enter -->
+    <EditText
+            android:layout_width="152dp"
+            android:layout_height="38dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/cityEnter"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toEndOf="@+id/cityLabel" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginBottom="395dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"/>
+
+
+    <!-- Adds state enter -->
+    <EditText
+            android:layout_width="152dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/stateEnter"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toEndOf="@+id/stateLabel" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/cityEnter" app:layout_constraintHorizontal_bias="0.488"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/zipEnter"
+            app:layout_constraintVertical_bias="0.153"/>
+
+
+    <!-- Adds zip enter -->
+    <EditText
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/zipEnter"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toEndOf="@+id/zipLabel" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:layout_marginBottom="268dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2" app:layout_constraintHorizontal_bias="0.488"/>
+
+
+    <!-- Adds fraud agreement label -->
+    <TextView
+            android:text="Fraud Agreement:"
+            android:layout_width="203dp"
+            android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="25dp"
+            android:id="@+id/fraudP" android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="@+id/view2"
+            android:layout_marginLeft="16dp" android:layout_marginTop="84dp"
+            app:layout_constraintTop_toBottomOf="@+id/zipLabel"/>
+
+
+    <!-- Adds agreement check box -->
+    <CheckBox
+            android:text="I Agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox" app:layout_constraintStart_toEndOf="@+id/fraudP" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/stateEnter"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginTop="80dp"
+            app:layout_constraintTop_toBottomOf="@+id/zipEnter" app:layout_constraintHorizontal_bias="0.384"/>
+
+
+    <!-- Adds previous button -->
+    <Button
+            android:text="Previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preButton" app:layout_constraintEnd_toStartOf="@+id/nextButton"
+            android:layout_marginEnd="40dp" android:layout_marginRight="40dp" android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2" app:layout_constraintStart_toStartOf="@+id/view2"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias="0.576"/>
+
+
+    <!-- Adds next button -->
+    <Button
+            android:text="Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nextButton" android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2" app:layout_constraintEnd_toEndOf="@+id/view2"
+            android:layout_marginEnd="44dp" android:layout_marginRight="44dp"/>
+
+
+    <!-- Adds button to open fraud agreement -->
+    <Button
+            android:text="View Fraud Agreement"
+            android:layout_width="153dp"
+            android:layout_height="55dp"
+            android:id="@+id/fPView" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/preButton" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/fraudP" app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="@+id/view2"/>
+</android.support.constraint.ConstraintLayout>
