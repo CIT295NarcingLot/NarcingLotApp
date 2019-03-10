@@ -9,6 +9,21 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+
+        <!-- Had to add activities here to tie everything together -->
+        <!-- Adds Offender Activity -->
+        <activity android:name=".OffenderPgActivity">
+        </activity>
+        <!-- Adds Submitter Activity -->
+        <activity android:name=".SubmitterPgActivity">
+        </activity>
+
+        <!-- Adds Location Activity -->
+        <activity android:name=".LocationPgActivity">
+        </activity>
+
+        <!-- Was here already -->
+        <!-- Adds Main Activity -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -16,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
