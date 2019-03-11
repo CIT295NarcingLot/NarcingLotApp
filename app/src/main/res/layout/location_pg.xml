@@ -169,19 +169,6 @@
 
 
     <!-- Adds state enter -->
-    <EditText
-            android:layout_width="152dp"
-            android:layout_height="40dp"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/stateEnter"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            app:layout_constraintStart_toEndOf="@+id/stateLabel" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/cityEnter" app:layout_constraintHorizontal_bias="0.488"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/zipEnter"
-            app:layout_constraintVertical_bias="0.153"/>
 
 
     <!-- Adds zip enter -->
@@ -216,9 +203,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox" app:layout_constraintStart_toEndOf="@+id/fraudP" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/stateEnter"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginTop="80dp"
-            app:layout_constraintTop_toBottomOf="@+id/zipEnter" app:layout_constraintHorizontal_bias="0.384"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintTop_toBottomOf="@+id/zipEnter"/>
 
 
     <!-- Adds previous button -->
@@ -252,4 +239,17 @@
             app:layout_constraintBottom_toTopOf="@+id/preButton" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/fraudP" app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintEnd_toEndOf="@+id/view2"/>
+
+    <!--STATE DROPDOWN-->
+    <Spinner
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Statespinner" app:layout_constraintStart_toEndOf="@+id/stateLabel"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/zipEnter"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/cityEnter"
+            android:entries="@array/state_list" />
+
 </android.support.constraint.ConstraintLayout>

@@ -240,16 +240,6 @@
             app:layout_constraintStart_toEndOf="@+id/fname"/>
 
     <!--SUBMITTER STATE  EVENTUALLY CHANGING TO DROPDOWN LIST-->
-    <EditText
-            android:layout_width="152dp"
-            android:layout_height="40dp"
-            android:inputType="textPersonName"
-            android:text=""
-            android:ems="10"
-            android:id="@+id/statesubenter"
-            app:layout_constraintStart_toEndOf="@+id/fname" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/citysub"/>
 
     <!--SUMITTER ZIP EVENTUALLY AUTOFILL BASED ON LOCATION-->
     <EditText
@@ -294,6 +284,17 @@
             android:id="@+id/DLUL" android:layout_marginTop="25dp"
             app:layout_constraintTop_toBottomOf="@+id/dlstate" app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintEnd_toEndOf="@+id/view"/>
+    <!-- STATE DROPDOWN -->
+    <Spinner
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2" app:layout_constraintStart_toEndOf="@+id/statesub"
+            app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/citysubenter" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/zipsubenter" app:layout_constraintHorizontal_bias="0.281"
+            app:layout_constraintVertical_bias="0.0"
+            android:entries="@array/state_list"/>
 
 
 </android.support.constraint.ConstraintLayout>
