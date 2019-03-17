@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.location_pg.*
+import java.util.zip.ZipEntry
 
 // Creates the Location instance and is required for an activity
 class LocationPgActivity : AppCompatActivity() {
@@ -23,5 +24,12 @@ class LocationPgActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Sets the entry fields to nothing
+        resetbutton.setOnClickListener{
+            locationEnter.setText("")
+            streetEnter.setText("")
+            cityEnter.setText("")
+            zipEnter.setText("")
+        }
     }
 }

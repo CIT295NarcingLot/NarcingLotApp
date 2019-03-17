@@ -16,5 +16,16 @@ class SubmitterPgActivity : AppCompatActivity() {
             val intent = Intent(this, LocationPgActivity :: class.java)
             startActivity(intent)
         }
+
+        // Sets the entry fields to nothing
+        resetButton.setOnClickListener{
+            subfn.setText("")
+            lnsub.setText("")
+            addsub.setText("")
+            citysubenter.setText("")
+            zipsubenter.setText("")
+            dlnumenter.setText("")
+            dlstateenter.setText("")
+        }
     }
 }

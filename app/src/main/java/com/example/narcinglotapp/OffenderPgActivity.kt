@@ -16,5 +16,14 @@ class OffenderPgActivity : AppCompatActivity() {
             val intent = Intent(this, LocationPgActivity :: class.java)
             startActivity(intent)
         }
+
+        // Sets the entry fields to nothing
+        resetButton.setOnClickListener{
+            MakeEnter.setText("")
+            ModelEnter.setText("")
+            ColorEnter.setText("")
+            PlateEnter.setText("")
+            VINEnter.setText("")
+        }
     }
 }
