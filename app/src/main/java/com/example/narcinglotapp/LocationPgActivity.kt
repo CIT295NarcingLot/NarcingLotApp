@@ -12,15 +12,101 @@ class LocationPgActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.location_pg)
 
+        // stores values from other pages
+        val lMake = intent.getStringExtra("Make");
+        val lModel = intent.getStringExtra("Model")
+        val lColor = intent.getStringExtra("Color")
+        val lPlate = intent.getStringExtra("Plate")
+        val lVin = intent.getStringExtra("VIN")
+
+        // stores values from other pages and creates a variable to reset the values for this page
+        val setLocation = intent.getStringExtra("Location")
+        val setAddress = intent.getStringExtra("Address")
+        val setCity = intent.getStringExtra("City")
+        val setZip = intent.getStringExtra("Zip")
+
+        // stores values from other pages
+        val lFirst = intent.getStringExtra("FirstN")
+        val lLast = intent.getStringExtra("LastN")
+        val lHaddress = intent.getStringExtra("HAddress")
+        val lHcity = intent.getStringExtra("HCity")
+        val lHzip = intent.getStringExtra("HZIP")
+        val lDLnum = intent.getStringExtra("DLnum")
+        val lDLstate = intent.getStringExtra("DLstate")
+
+        // sets the text fields to the stored values
+        locationEnter.setText(setLocation)
+        streetEnter.setText(setAddress)
+        cityEnter.setText(setCity)
+        zipEnter.setText(setZip)
+
         // Sends user to Submitter Page
         nextButton.setOnClickListener{
             val intent = Intent(this, SubmitterPgActivity :: class.java)
+
+            // turns the entered text into a variable to be used
+            val location = locationEnter.text.toString()
+            val address = streetEnter.text.toString()
+            val city = cityEnter.text.toString()
+            val zip = zipEnter.text.toString()
+
+            // sends location values to next page
+            intent.putExtra("Location", location)
+            intent.putExtra("Address", address)
+            intent.putExtra("City", city)
+            intent.putExtra("ZIP", zip)
+
+            // sends offender values to next page
+            intent.putExtra("Make", lMake)
+            intent.putExtra("Model", lModel)
+            intent.putExtra("Color", lColor)
+            intent.putExtra("Plate", lPlate)
+            intent.putExtra("Vin", lVin)
+
+            // sends submitter values to next page
+            intent.putExtra("FirstN", lFirst)
+            intent.putExtra("LastN", lLast)
+            intent.putExtra("HAddress", lHaddress)
+            intent.putExtra("HCity", lHcity)
+            intent.putExtra("HZIP", lHzip)
+            intent.putExtra("DLnum", lDLnum)
+            intent.putExtra("DLstate", lDLstate)
+
             startActivity(intent)
         }
 
         // Sends user back to Offender Page
         preButton.setOnClickListener{
             val intent = Intent(this, OffenderPgActivity :: class.java)
+
+            // turns the entered text into a variable to be used
+            val location = locationEnter.text.toString()
+            val address = streetEnter.text.toString()
+            val city = cityEnter.text.toString()
+            val zip = zipEnter.text.toString()
+
+            // sends location values  to previous page
+            intent.putExtra("Location", location)
+            intent.putExtra("Address", address)
+            intent.putExtra("City", city)
+            intent.putExtra("ZIP", zip)
+
+            // sends offender values to previous page
+            intent.putExtra("Make", lMake)
+            intent.putExtra("Model", lModel)
+            intent.putExtra("Color", lColor)
+            intent.putExtra("Plate", lPlate)
+            intent.putExtra("Vin", lVin)
+
+            // sends submitter values to previous page
+            intent.putExtra("FirstN", lFirst)
+            intent.putExtra("LastN", lLast)
+            intent.putExtra("HAddress", lHaddress)
+            intent.putExtra("HCity", lHcity)
+            intent.putExtra("HZIP", lHzip)
+            intent.putExtra("DLnum", lDLnum)
+            intent.putExtra("DLstate", lDLstate)
+
             startActivity(intent)
         }
 
