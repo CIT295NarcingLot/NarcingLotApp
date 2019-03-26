@@ -14,6 +14,17 @@ class SubmitterPgActivity : AppCompatActivity() {
         // Sends user back to Location Page
         PreButton.setOnClickListener{
             val intent = Intent(this, LocationPgActivity :: class.java)
+
+            //PULL INFO TO VARIABLES
+            var fName=subfn;
+            var lName=subln;
+            var subStr=addsub;
+            var subCity=citysubenter;
+            var subState=SubStateSpinner;
+            var subZip=zipsubenter;
+            var subDL=dlnumenter;
+            var subDLS=dlstateenter;
+
             startActivity(intent)
         }
     }

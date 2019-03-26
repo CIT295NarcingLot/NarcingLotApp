@@ -14,6 +14,14 @@ class LocationPgActivity : AppCompatActivity() {
         // Sends user to Submitter Page
         nextButton.setOnClickListener{
             val intent = Intent(this, SubmitterPgActivity :: class.java)
+
+            //PULL INFO TO VARIABLES
+            var locLoc=locationEnter;
+            var locStr=streetEnter;
+            var locCit=cityEnter;
+            var locState=LocStateSpinner;
+            var locZip=zipEnter;
+
             startActivity(intent)
         }
 
