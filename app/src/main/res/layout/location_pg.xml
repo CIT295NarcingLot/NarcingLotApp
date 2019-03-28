@@ -20,7 +20,7 @@
 
     <!-- Adds title banner -->
     <TextView
-            android:text="Offender Page"
+            android:text="Location Page"
             android:layout_width="154dp"
             android:layout_height="30dp"
             android:gravity="center"

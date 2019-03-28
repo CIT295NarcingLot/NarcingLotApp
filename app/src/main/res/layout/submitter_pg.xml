@@ -101,7 +101,7 @@
 
     <!--FIRST NAME LABEL-->
     <TextView
-            android:text="Fitst Name:"
+            android:text="First Name:"
             android:layout_width="99dp"
             android:layout_height="38dp"
             android:gravity="center"
