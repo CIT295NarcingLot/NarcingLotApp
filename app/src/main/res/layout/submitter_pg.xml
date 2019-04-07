@@ -7,11 +7,28 @@
                                              android:layout_height="match_parent"
                                              android:background="@drawable/gradient">
     <!--WHITE BOX-->
+    <CheckBox
+            android:text="I Agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox2"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/button6" app:layout_constraintStart_toEndOf="@+id/fraudButton"/>
+    <Button
+            android:text="Fraud Agreement"
+            android:layout_width="167dp"
+            android:layout_height="35dp"
+            android:id="@+id/fraudButton"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view" app:layout_constraintBottom_toTopOf="@+id/resetButton"
+            android:layout_marginBottom="28dp" app:layout_constraintHorizontal_bias="0.196"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/button5"/>
     <View
             android:layout_width="325dp"
             android:layout_height="669dp"
             android:background="#ffffff"
-            android:id="@+id/view2" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:id="@+id/view" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
@@ -23,8 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/PreButton"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/button5" app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp" android:layout_marginStart="36dp" android:layout_marginBottom="14dp"
             app:layout_constraintBottom_toBottomOf="@+id/view" app:layout_constraintEnd_toStartOf="@+id/Submitbtn"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.0"/>
@@ -35,9 +51,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Submitbtn"
-            app:layout_constraintEnd_toEndOf="@+id/view2"
-            android:layout_marginEnd="36dp" android:layout_marginRight="36dp" android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/button6" android:layout_marginBottom="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            android:layout_marginEnd="36dp" android:layout_marginRight="36dp"
+            android:layout_marginBottom="14dp"
             app:layout_constraintBottom_toBottomOf="@+id/view"/>
 
     <!--OPEN CAMERA BUTTON-->
@@ -48,7 +64,7 @@
             android:id="@+id/button5"
             app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/DLUL" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/DLUL" android:layout_marginTop="2dp"
             app:layout_constraintEnd_toStartOf="@+id/button6" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"/>
 
@@ -59,19 +75,19 @@
             android:layout_height="41dp"
             android:id="@+id/button6" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="28dp"
             android:layout_marginRight="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/DLUL" android:layout_marginTop="12dp"/>
-    <!--WHITE BOX-->
-    <View
-            android:layout_width="325dp"
-            android:layout_height="669dp"
-            android:background="#ffffff"
-            android:id="@+id/view" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:visibility="visible"/>
+            app:layout_constraintTop_toBottomOf="@+id/DLUL" android:layout_marginTop="2dp"/>
 
     <!--BANNER-->
+    <Button
+            android:text="Reset"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/resetButton"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="176dp" android:layout_marginStart="176dp" android:layout_marginEnd="167dp"
+            android:layout_marginRight="167dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginBottom="14dp" app:layout_constraintBottom_toBottomOf="@+id/view"/>
     <TextView
             android:text="NARC-ING LOT"
             android:layout_width="319dp"
@@ -108,7 +124,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp"
-            android:id="@+id/fname" android:layout_marginTop="40dp"
+            android:id="@+id/fname" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/SubmitterSubB" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp" android:layout_marginStart="36dp"/>
 
@@ -205,8 +221,8 @@
             android:ems="10"
             android:id="@+id/subfn"
             app:layout_constraintStart_toEndOf="@+id/fname" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:layout_marginTop="80dp"
-            app:layout_constraintTop_toBottomOf="@+id/SubmitterBanner"/>
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/SubmitterBanner" android:layout_marginTop="20dp"/>
 
     <!--SUBMITTER LAST NAME-->
     <EditText
@@ -301,15 +317,6 @@
             android:entries="@array/state_list"/>
 
     <!-- Adds a button to reset the page -->
-    <Button
-            android:text="Reset"
-            android:layout_width="68dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/resetButton" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="614dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="69dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="176dp" android:layout_marginStart="176dp" android:layout_marginEnd="167dp"
-            android:layout_marginRight="167dp" app:layout_constraintEnd_toEndOf="parent"/>
 
 
 </android.support.constraint.ConstraintLayout>

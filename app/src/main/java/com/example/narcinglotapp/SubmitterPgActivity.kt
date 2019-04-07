@@ -1,5 +1,6 @@
 package com.example.narcinglotapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -26,6 +27,14 @@ class SubmitterPgActivity : AppCompatActivity() {
             zipsubenter.setText("")
             dlnumenter.setText("")
             dlstateenter.setText("")
+        }
+        //FRAUD AGREEMENT
+        fraudButton.setOnClickListener{
+            val builder = AlertDialog.Builder(this@SubmitterPgActivity)
+            builder.setTitle("FRAUD AGREEMENT")
+            builder.setMessage("Legal Information will Display here.")
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 }
