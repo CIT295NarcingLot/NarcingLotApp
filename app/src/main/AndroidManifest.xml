@@ -2,7 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.narcinglotapp">
 
-    <application
+    <!-- Gets permission to use the camera app -->
+    <uses-feature android:name="android.hardware.camera"
+                  android:required="true" />
+    <!-- Gives the app permission to read and write in the storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Gets permission to use the camera app -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+<application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"

@@ -111,7 +111,7 @@ class LocationPgActivity : AppCompatActivity() {
         }
 
         // Sets the entry fields to nothing
-        resetbutton.setOnClickListener{
+        resetbuttonL.setOnClickListener{
             locationEnter.setText("")
             streetEnter.setText("")
             cityEnter.setText("")

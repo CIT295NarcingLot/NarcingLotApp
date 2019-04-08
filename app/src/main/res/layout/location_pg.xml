@@ -257,7 +257,7 @@
             android:text="Reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resetbutton" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/resetbuttonL" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="561dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="122dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="158dp" android:layout_marginStart="158dp" android:layout_marginEnd="165dp"

@@ -1,7 +1,9 @@
 package com.example.narcinglotapp
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.offender_pg.*
 
@@ -78,12 +80,44 @@ class OffenderPgActivity : AppCompatActivity() {
         }
 
         // Sets the entry fields to nothing
-        resetButton.setOnClickListener{
+        resetButtonO.setOnClickListener{
             MakeEnter.setText("")
             ModelEnter.setText("")
             ColorEnter.setText("")
             PlateEnter.setText("")
             VINEnter.setText("")
         }
+
+        // creates an on click listener for the open camera button that calls the open camera function
+        cameraButtonO.setOnClickListener{
+            // this opens up the default camera app on the phone
+            var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(takePictureIntent, 142)
+        }
+        
+        // creates an on click listener for the pick picture button that opens the gallery
+        pickPButtonO.setOnClickListener{
+            // opens the gallery to get a picture
+            val pickPictureIntent = Intent(Intent.ACTION_PICK)
+            pickPictureIntent.type = "image/*"
+            startActivityForResult(pickPictureIntent, 150)
+        }
+
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        // checks if it is using the camera
+        if(requestCode == 142){
+            var bmp1=data?.extras?.get("data") as Bitmap
+            imageViewO.setImageBitmap(bmp1)
+        }
+        // checks if it is using the gallery
+        if(requestCode == 150){
+            imageViewO.setImageURI(data?.data)
+        }
+
+    }
+
+
 }

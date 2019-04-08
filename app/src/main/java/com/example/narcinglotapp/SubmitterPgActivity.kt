@@ -1,7 +1,9 @@
 package com.example.narcinglotapp
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.submitter_pg.*
 
@@ -36,9 +38,9 @@ class SubmitterPgActivity : AppCompatActivity() {
         // sets the text fields to the stored values
         subfn.setText(setFirst)
         lnsub.setText(setLast)
-        addresssub.setText(setHaddress)
-        citysub.setText(setHcity)
-        zipsub.setText(setHzip)
+        addsub.setText(setHaddress)
+        citysubenter.setText(setHcity)
+        zipsubenter.setText(setHzip)
         dlnumenter.setText(setDLnum)
         dlstateenter.setText(setDLstate)
 
@@ -50,8 +52,8 @@ class SubmitterPgActivity : AppCompatActivity() {
             val first = subfn.text.toString()
             val last = lnsub.text.toString()
             val address = addsub.text.toString()
-            val city = citysub.text.toString()
-            val zip = zipsub.text.toString()
+            val city = citysubenter.text.toString()
+            val zip = zipsubenter.text.toString()
             val dlnum = dlnumenter.text.toString()
             val dlstate = dlstateenter.text.toString()
 
@@ -81,7 +83,7 @@ class SubmitterPgActivity : AppCompatActivity() {
         }
 
         // Sets the entry fields to nothing
-        resetButton.setOnClickListener{
+        resetButtonS.setOnClickListener{
             subfn.setText("")
             lnsub.setText("")
             addsub.setText("")
@@ -89,6 +91,36 @@ class SubmitterPgActivity : AppCompatActivity() {
             zipsubenter.setText("")
             dlnumenter.setText("")
             dlstateenter.setText("")
+        }
+
+
+        // creates an on click listener for the open camera button that opens the camera
+        cameraButtonS.setOnClickListener{
+            // this opens up the default camera app on the phone
+            var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(takePictureIntent, 142)
+        }
+
+        // creates an on click listener for the pick picture button that opens the gallery
+        pickPButtonS.setOnClickListener{
+            // opens the gallery to get a picture
+            val pickPictureIntent = Intent(Intent.ACTION_PICK)
+            pickPictureIntent.type = "image/*"
+            startActivityForResult(pickPictureIntent, 150)
+        }
+
+
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        // checks if it is using the camera
+        if(requestCode == 142){
+            var bmp=data?.extras?.get("data") as Bitmap
+            imageViewS.setImageBitmap(bmp)
+        }
+        // checks if it is using the gallery
+        if(requestCode == 150){
+            imageViewS.setImageURI(data?.data)
         }
     }
 }
