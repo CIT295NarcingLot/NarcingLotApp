@@ -68,8 +68,7 @@
             app:layout_constraintStart_toEndOf="@+id/MakeLabel" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
-            android:layout_marginTop="44dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+            app:layout_constraintTop_toBottomOf="@+id/ModelEnter"/>
 
     <!-- Car plate # enter -->
     <EditText
@@ -81,8 +80,7 @@
             app:layout_constraintStart_toEndOf="@+id/MakeLabel" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
-            android:layout_marginTop="84dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+            app:layout_constraintTop_toBottomOf="@+id/ColorEnter"/>
 
     <!-- State the car is registered in enter -->
 
@@ -93,11 +91,9 @@
             android:inputType="textUri|textPersonName"
             android:ems="10"
             android:id="@+id/VINEnter"
-            app:layout_constraintStart_toEndOf="@+id/MakeLabel" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
-            android:layout_marginTop="164dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeEnter"/>
+            app:layout_constraintStart_toEndOf="@+id/VINLabel"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/PlateEnter"/>
 
     <!-- car make enter -->
     <EditText
@@ -109,8 +105,8 @@
             app:layout_constraintStart_toEndOf="@+id/MakeLabel" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.076"
-            android:layout_marginTop="80dp"
-            app:layout_constraintTop_toBottomOf="@+id/OffenderBanner"/>
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/OffenderSubB"/>
 
     <!-- Make label -->
     <TextView
@@ -136,7 +132,7 @@
             app:layout_constraintTop_toBottomOf="@+id/MakeLabel" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="4dp"/>
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="2dp"/>
 
     <!-- Color label -->
     <TextView
@@ -146,11 +142,11 @@
             android:gravity="center"
             android:id="@+id/ColorLabel" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" android:layout_marginTop="44dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeLabel" android:textStyle="bold"
+            android:layout_marginStart="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/ModelLabel" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="2dp"/>
 
     <!-- Plate # label -->
     <TextView
@@ -160,11 +156,11 @@
             android:gravity="center"
             android:id="@+id/PlateLabel" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" android:layout_marginTop="84dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeLabel" android:textStyle="bold"
+            android:layout_marginStart="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/ColorLabel" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="2dp"/>
 
     <!-- Registered state label -->
     <TextView
@@ -174,8 +170,8 @@
             android:gravity="center"
             android:id="@+id/RegStateLabel" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" android:layout_marginTop="124dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeLabel" android:textStyle="bold"
+            android:layout_marginStart="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/PlateLabel" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
@@ -188,8 +184,8 @@
             android:gravity="center"
             android:id="@+id/VINLabel" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" android:layout_marginTop="164dp"
-            app:layout_constraintTop_toBottomOf="@+id/MakeLabel" android:textStyle="bold"
+            android:layout_marginStart="36dp" android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/RegStateLabel" android:textStyle="bold"
             android:textColor="@color/colorPrimary" android:textSize="18sp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/ModelEnter" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
