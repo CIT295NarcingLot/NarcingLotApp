@@ -11,6 +11,14 @@ class LocationPgActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.location_pg)
+        nextButton.isEnabled=false;
+        if(locationEnter.toString()!="" &&
+           streetEnter.toString()!="" &&
+           cityEnter.toString()!="" &&
+           zipEnter.toString()!="" &&
+           Statespinner.toString()!=""){
+                nextButton.isEnabled=true;
+        }
 
         // Sends user to Submitter Page
         nextButton.setOnClickListener{

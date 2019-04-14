@@ -10,6 +10,15 @@ class OffenderPgActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.offender_pg)
+        NextPgbtn.isEnabled=false;
+        if(MakeEnter.toString()!="" &&
+           ModelEnter.toString()!="" &&
+           ColorEnter.toString()!="" &&
+           PlateEnter.toString()!="" &&
+           VINEnter.toString()!="" &&
+           Offspinner.toString()!= "Select One"){
+                NextPgbtn.isEnabled=true;
+        }
 
         // Sends user to Location Page
         NextPgbtn.setOnClickListener{

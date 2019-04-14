@@ -11,6 +11,18 @@ class SubmitterPgActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.submitter_pg)
+        Submitbtn.isEnabled=false;
+        if(subfn.toString()!="" &&
+            lnsub.toString()!="" &&
+            addsub.toString()!="" &&
+            citysubenter.toString()!="" &&
+            zipsubenter.toString()!="" &&
+            dlnumenter.toString()!="" &&
+            dlstateenter.toString()!="" &&
+            Subspinner.toString()!="Select One" &&
+            checkBox2.isChecked==true){
+            Submitbtn.isEnabled=true;
+        }
 
         // Sends user back to Location Page
         PreButton.setOnClickListener{

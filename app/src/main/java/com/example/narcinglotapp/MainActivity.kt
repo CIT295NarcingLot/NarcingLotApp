@@ -11,6 +11,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //FORM COMPLETION
+        SignInButton.isEnabled=false;
+        if(usernamein.toString()!="" && passwordin.toString()!=""){
+            SignInButton.isEnabled=true;
+        }
+
         //TESTING HOMESCREEN BRANCH
 
         // Sends user to Offender Page
