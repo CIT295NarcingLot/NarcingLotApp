@@ -52,7 +52,7 @@
     <!--PASSWORD LABEL-->
     <TextView
             android:text="@string/password"
-            android:layout_width="92dp"
+            android:layout_width="121dp"
             android:layout_height="23dp"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
