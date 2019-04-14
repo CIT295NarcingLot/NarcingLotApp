@@ -16,7 +16,7 @@ class LocationPgActivity : AppCompatActivity() {
            streetEnter.toString()!="" &&
            cityEnter.toString()!="" &&
            zipEnter.toString()!="" &&
-           Statespinner.toString()!=""){
+           Statespinner.toString()!="Select One"){
                 nextButton.isEnabled=true;
         }
 
