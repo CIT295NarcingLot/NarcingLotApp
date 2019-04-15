@@ -37,7 +37,7 @@ class SubmitterPgActivity : AppCompatActivity() {
 
         val spinnerL = intent.getStringExtra("SpinnerL")
         val spinnerO = intent.getStringExtra("SpinnerO")
-        val spinnerS = intent.getStringExtra("SpinnerS")
+        //val spinnerS = intent.getStringExtra("SpinnerS")
 
         // sets the text fields to the stored values
         subfn.setText(setFirst)
@@ -117,6 +117,52 @@ class SubmitterPgActivity : AppCompatActivity() {
             val pickPictureIntent = Intent(Intent.ACTION_PICK)
             pickPictureIntent.type = "image/*"
             startActivityForResult(pickPictureIntent, 150)
+        }
+
+        // Submit button
+        Submitbtn.setOnClickListener{
+            val first = subfn.text.toString()
+            val last = lnsub.text.toString()
+            val address = addsub.text.toString()
+            val city = citysubenter.text.toString()
+            val zip = zipsubenter.text.toString()
+            val dlnum = dlnumenter.text.toString()
+            val dlstate = dlstateenter.text.toString()
+            val spinnerS = spinner2.getSelectedItem().toString()
+            val senderEmail = "fakeEmail@fakeemail.com"
+            var email = Intent(android.content.Intent.ACTION_SEND)
+            // sets text type
+            email.setType("plain/text")
+            email.putExtra(android.content.Intent.EXTRA_EMAIL, senderEmail)
+            email.putExtra(android.content.Intent.EXTRA_CC, senderEmail)
+            email.putExtra(android.content.Intent.EXTRA_BCC, senderEmail)
+
+            //fills the subject bar
+            email.putExtra(android.content.Intent.EXTRA_SUBJECT, "Narcing Lot Offender Report")
+            // fills the text area
+            email.putExtra(android.content.Intent.EXTRA_TEXT, "Offender INFO: \n " +
+                    "Make - " + sMake +
+                    "\nModel - " + sModel +
+                    "\nColor - " + sColor +
+                    "\nPlate# - " + sPlate +
+                    "\nState - " + spinnerO +
+                    "\nVIN# - " + sVin +
+                    "\n\n\nLocation INFO:" +
+                    "\nLocation - " + sLocation +
+                    "\nStreet Address - " + sAddress +
+                    "\nCity - " + sCity +
+                    "\nState - " + spinnerL +
+                    "\nZIP - " + sZip +
+                    "\n\n\nSubmitter INFO:" +
+                    "\nFirst Name - " + first +
+                    "\nLast Name - " + last +
+                    "\nAddress - " + address +
+                    "\nCity - " + city +
+                    "\nState - " + spinnerS +
+                    "\nZIP - " + zip +
+                    "\nD/L# - " + dlnum +
+                    "\nD/L State - " + dlstate)
+            startActivity(email)
         }
 
 

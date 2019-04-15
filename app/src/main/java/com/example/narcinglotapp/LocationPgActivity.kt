@@ -34,7 +34,7 @@ class LocationPgActivity : AppCompatActivity() {
         val lDLnum = intent.getStringExtra("DLnum")
         val lDLstate = intent.getStringExtra("DLstate")
 
-        val spinnerL = intent.getStringExtra("SpinnerL")
+        //val spinnerL = intent.getStringExtra("SpinnerL")
         val spinnerO = intent.getStringExtra("SpinnerO")
         val spinnerS = intent.getStringExtra("SpinnerS")
 

@@ -36,7 +36,7 @@ class OffenderPgActivity : AppCompatActivity() {
         val oDLstate = intent.getStringExtra("DLstate")
 
         val spinnerL = intent.getStringExtra("SpinnerL")
-        val spinnerO = intent.getStringExtra("SpinnerO")
+        //val spinnerO = intent.getStringExtra("SpinnerO")
         val spinnerS = intent.getStringExtra("SpinnerS")
 
         // sets the text fields to the stored values
