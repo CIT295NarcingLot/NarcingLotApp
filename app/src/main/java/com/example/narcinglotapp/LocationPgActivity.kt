@@ -34,11 +34,16 @@ class LocationPgActivity : AppCompatActivity() {
         val lDLnum = intent.getStringExtra("DLnum")
         val lDLstate = intent.getStringExtra("DLstate")
 
+        val spinnerL = intent.getStringExtra("SpinnerL")
+        val spinnerO = intent.getStringExtra("SpinnerO")
+        val spinnerS = intent.getStringExtra("SpinnerS")
+
         // sets the text fields to the stored values
         locationEnter.setText(setLocation)
         streetEnter.setText(setAddress)
         cityEnter.setText(setCity)
         zipEnter.setText(setZip)
+
 
         // Sends user to Submitter Page
         nextButton.setOnClickListener{
@@ -49,6 +54,8 @@ class LocationPgActivity : AppCompatActivity() {
             val address = streetEnter.text.toString()
             val city = cityEnter.text.toString()
             val zip = zipEnter.text.toString()
+
+            val spinnerL = Statespinner.getSelectedItem().toString()
 
             // sends location values to next page
             intent.putExtra("Location", location)
@@ -72,6 +79,10 @@ class LocationPgActivity : AppCompatActivity() {
             intent.putExtra("DLnum", lDLnum)
             intent.putExtra("DLstate", lDLstate)
 
+            intent.putExtra("SpinnerL", spinnerL)
+            intent.putExtra("SpinnerO", spinnerO)
+            intent.putExtra("SpinnerS", spinnerS)
+
             startActivity(intent)
         }
 
@@ -84,6 +95,8 @@ class LocationPgActivity : AppCompatActivity() {
             val address = streetEnter.text.toString()
             val city = cityEnter.text.toString()
             val zip = zipEnter.text.toString()
+
+            val spinnerValL = Statespinner.getSelectedItem().toString()
 
             // sends location values  to previous page
             intent.putExtra("Location", location)
@@ -106,6 +119,10 @@ class LocationPgActivity : AppCompatActivity() {
             intent.putExtra("HZIP", lHzip)
             intent.putExtra("DLnum", lDLnum)
             intent.putExtra("DLstate", lDLstate)
+
+            intent.putExtra("SpinnerL", spinnerValL)
+            intent.putExtra("SpinnerO", spinnerO)
+            intent.putExtra("SpinnerS", spinnerS)
 
             startActivity(intent)
         }

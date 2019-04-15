@@ -35,6 +35,10 @@ class OffenderPgActivity : AppCompatActivity() {
         val oDLnum = intent.getStringExtra("DLnum")
         val oDLstate = intent.getStringExtra("DLstate")
 
+        val spinnerL = intent.getStringExtra("SpinnerL")
+        val spinnerO = intent.getStringExtra("SpinnerO")
+        val spinnerS = intent.getStringExtra("SpinnerS")
+
         // sets the text fields to the stored values
         MakeEnter.setText(setMake)
         ModelEnter.setText(setModel)
@@ -53,6 +57,8 @@ class OffenderPgActivity : AppCompatActivity() {
             val color = ColorEnter.text.toString()
             val plate = PlateEnter.text.toString()
             val vin = VINEnter.text.toString()
+
+            val spinnerO = spinner.getSelectedItem().toString()
 
             // sends offender values to next page
             intent.putExtra("Make", make)
@@ -76,6 +82,10 @@ class OffenderPgActivity : AppCompatActivity() {
             intent.putExtra("DLnum", oDLnum)
             intent.putExtra("DLstate", oDLstate)
 
+            intent.putExtra("SpinnerL", spinnerL)
+            intent.putExtra("SpinnerO", spinnerO)
+            intent.putExtra("SpinnerS", spinnerS)
+
             startActivity(intent)
         }
 
@@ -94,7 +104,7 @@ class OffenderPgActivity : AppCompatActivity() {
             var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePictureIntent, 142)
         }
-        
+
         // creates an on click listener for the pick picture button that opens the gallery
         pickPButtonO.setOnClickListener{
             // opens the gallery to get a picture

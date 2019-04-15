@@ -35,6 +35,10 @@ class SubmitterPgActivity : AppCompatActivity() {
         val setDLnum = intent.getStringExtra("DLnum")
         val setDLstate = intent.getStringExtra("DLstate")
 
+        val spinnerL = intent.getStringExtra("SpinnerL")
+        val spinnerO = intent.getStringExtra("SpinnerO")
+        val spinnerS = intent.getStringExtra("SpinnerS")
+
         // sets the text fields to the stored values
         subfn.setText(setFirst)
         lnsub.setText(setLast)
@@ -57,6 +61,8 @@ class SubmitterPgActivity : AppCompatActivity() {
             val dlnum = dlnumenter.text.toString()
             val dlstate = dlstateenter.text.toString()
 
+            val spinnerS = spinner2.getSelectedItem().toString()
+
             // sends submitter values to previous page
             intent.putExtra("FirstN", first)
             intent.putExtra("LastN", last)
@@ -78,6 +84,10 @@ class SubmitterPgActivity : AppCompatActivity() {
             intent.putExtra("Color", sColor)
             intent.putExtra("Plate", sPlate)
             intent.putExtra("Vin", sVin)
+
+            intent.putExtra("SpinnerL", spinnerS)
+            intent.putExtra("SpinnerO", spinnerO)
+            intent.putExtra("SpinnerS", spinnerL)
 
             startActivity(intent)
         }
@@ -115,7 +125,7 @@ class SubmitterPgActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         // checks if it is using the camera
         if(requestCode == 142){
-            var bmp=data?.extras?.get("data") as Bitmap
+            var bmp = data?.extras?.get("data") as Bitmap
             imageViewS.setImageBitmap(bmp)
         }
         // checks if it is using the gallery
