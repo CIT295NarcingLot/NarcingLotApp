@@ -2,6 +2,7 @@ package com.example.narcinglotapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.offender_pg.*
 
@@ -10,20 +11,26 @@ class OffenderPgActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.offender_pg)
-        NextPgbtn.isEnabled=false;
-        if(MakeEnter.toString()!="" &&
-           ModelEnter.toString()!="" &&
-           ColorEnter.toString()!="" &&
-           PlateEnter.toString()!="" &&
-           VINEnter.toString()!="" &&
-           Offspinner.toString()!= "Select One"){
-                NextPgbtn.isEnabled=true;
-        }
 
         // Sends user to Location Page
         NextPgbtn.setOnClickListener{
             val intent = Intent(this, LocationPgActivity :: class.java)
-            startActivity(intent)
+
+            //FORM COMPLETION
+            if(MakeEnter.text.toString()=="" ||
+                ModelEnter.text.toString()=="" ||
+                ColorEnter.text.toString()=="" ||
+                PlateEnter.text.toString()=="" ||
+                VINEnter.text.toString()=="" ||
+                Offspinner.getSelectedItem()== 0){
+                    val builder = AlertDialog.Builder(this@OffenderPgActivity)
+                    builder.setTitle("FORM INCOMPLETE")
+                    builder.setMessage("Please fill all fields.")
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+            }else {
+                startActivity(intent)
+            }
         }
 
         // Sets the entry fields to nothing

@@ -11,18 +11,8 @@ class SubmitterPgActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.submitter_pg)
-        Submitbtn.isEnabled=false;
-        if(subfn.toString()!="" &&
-            lnsub.toString()!="" &&
-            addsub.toString()!="" &&
-            citysubenter.toString()!="" &&
-            zipsubenter.toString()!="" &&
-            dlnumenter.toString()!="" &&
-            dlstateenter.toString()!="" &&
-            Subspinner.toString()!="Select One" &&
-            checkBox2.isChecked==true){
-            Submitbtn.isEnabled=true;
-        }
+
+
 
         // Sends user back to Location Page
         PreButton.setOnClickListener{
@@ -39,6 +29,26 @@ class SubmitterPgActivity : AppCompatActivity() {
             zipsubenter.setText("")
             dlnumenter.setText("")
             dlstateenter.setText("")
+        }
+
+        Submitbtn.setOnClickListener{
+
+            //FORM COMPLETION
+            if(subfn.text.toString()=="" ||
+                lnsub.text.toString()=="" ||
+                addsub.text.toString()=="" ||
+                citysubenter.text.toString()=="" ||
+                zipsubenter.text.toString()=="" ||
+                dlnumenter.text.toString()=="" ||
+                dlstateenter.text.toString()=="" ||
+                Subspinner.getSelectedItem()!=0 ||
+                checkBox2.isChecked!=true) {
+                    val builder = AlertDialog.Builder(this@SubmitterPgActivity)
+                    builder.setTitle("FORM INCOMPLETE")
+                    builder.setMessage("Please fill all fields.")
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+            }
         }
         //FRAUD AGREEMENT
         fraudButton.setOnClickListener{
