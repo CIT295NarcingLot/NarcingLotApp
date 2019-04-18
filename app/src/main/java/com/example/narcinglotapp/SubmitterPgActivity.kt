@@ -41,11 +41,11 @@ class SubmitterPgActivity : AppCompatActivity() {
                 zipsubenter.text.toString()=="" ||
                 dlnumenter.text.toString()=="" ||
                 dlstateenter.text.toString()=="" ||
-                Subspinner.getSelectedItem()!=0 ||
+                Subspinner.selectedItem.equals("Select One") ||
                 checkBox2.isChecked!=true) {
                     val builder = AlertDialog.Builder(this@SubmitterPgActivity)
                     builder.setTitle("FORM INCOMPLETE")
-                    builder.setMessage("Please fill all fields.")
+                    builder.setMessage("Please complete all fields before moving to the next page.")
                     val dialog: AlertDialog = builder.create()
                     dialog.show()
             }

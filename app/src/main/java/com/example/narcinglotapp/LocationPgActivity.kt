@@ -24,10 +24,10 @@ class LocationPgActivity : AppCompatActivity() {
                streetEnter.text.toString()=="" ||
                cityEnter.text.toString()=="" ||
                zipEnter.text.toString()=="" ||
-               Statespinner.getSelectedItem()==0){
+               Statespinner.selectedItem.equals("Select One")){
                         val builder = AlertDialog.Builder(this@LocationPgActivity)
                         builder.setTitle("FORM INCOMPLETE")
-                        builder.setMessage("Please fill all fields.")
+                        builder.setMessage("Please complete all fields before moving to the next page.")
                         val dialog: AlertDialog = builder.create()
                         dialog.show()
                 }else {

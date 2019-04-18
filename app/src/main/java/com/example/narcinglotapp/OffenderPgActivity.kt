@@ -22,10 +22,10 @@ class OffenderPgActivity : AppCompatActivity() {
                 ColorEnter.text.toString()=="" ||
                 PlateEnter.text.toString()=="" ||
                 VINEnter.text.toString()=="" ||
-                Offspinner.getSelectedItem()== 0){
+                Offspinner.selectedItem.equals("Select One")){
                     val builder = AlertDialog.Builder(this@OffenderPgActivity)
                     builder.setTitle("FORM INCOMPLETE")
-                    builder.setMessage("Please fill all fields.")
+                    builder.setMessage("Please complete all fields before moving to the next page.")
                     val dialog: AlertDialog = builder.create()
                     dialog.show()
             }else {
