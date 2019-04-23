@@ -2,10 +2,18 @@ package com.example.narcinglotapp
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
+import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.submitter_pg.*
+import java.io.File
+import java.io.IOException
+import java.net.URI
+import java.text.SimpleDateFormat
+import java.util.*
 
 // Creates the Submitter instance and is required for an activity
 class SubmitterPgActivity : AppCompatActivity() {
@@ -103,12 +111,36 @@ class SubmitterPgActivity : AppCompatActivity() {
             dlstateenter.setText("")
         }
 
+        @Throws(IOException::class)
+        fun createImageFile(): File {
+            var currentPhotoPath : String
+            // Create an image file name
+            val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+            val storageDir: File = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            return File.createTempFile(
+                "JPEG_${timeStamp}_", /* prefix */
+                ".jpg", /* suffix */
+                storageDir /* directory */
+            ).apply {
+                // Save a file: path for use with ACTION_VIEW intents
+                currentPhotoPath = absolutePath
+            }
+        }
 
         // creates an on click listener for the open camera button that opens the camera
         cameraButtonS.setOnClickListener{
             // this opens up the default camera app on the phone
             var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(takePictureIntent, 142)
+            val photoFile: File? = try {
+                createImageFile()
+            }catch (ex: IOException) {
+                null
+            }
+            photoFile?.also {
+                val photoURL: Uri = FileProvider.getUriForFile(this, "com.example.narcinglotapp.file", it)
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURL)
+                startActivityForResult(takePictureIntent, 142)
+            }
         }
 
         // creates an on click listener for the pick picture button that opens the gallery
@@ -129,13 +161,11 @@ class SubmitterPgActivity : AppCompatActivity() {
             val dlnum = dlnumenter.text.toString()
             val dlstate = dlstateenter.text.toString()
             val spinnerS = spinner2.getSelectedItem().toString()
-            val senderEmail = "fakeEmail@fakeemail.com"
+            val senderEmail = arrayOf<String>("fakeEmail@fakeEmail.com")
             var email = Intent(android.content.Intent.ACTION_SEND)
             // sets text type
             email.setType("plain/text")
             email.putExtra(android.content.Intent.EXTRA_EMAIL, senderEmail)
-            email.putExtra(android.content.Intent.EXTRA_CC, senderEmail)
-            email.putExtra(android.content.Intent.EXTRA_BCC, senderEmail)
 
             //fills the subject bar
             email.putExtra(android.content.Intent.EXTRA_SUBJECT, "Narcing Lot Offender Report")
@@ -162,21 +192,25 @@ class SubmitterPgActivity : AppCompatActivity() {
                     "\nZIP - " + zip +
                     "\nD/L# - " + dlnum +
                     "\nD/L State - " + dlstate)
+            //email.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile())
+
             startActivity(email)
         }
 
 
     }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // checks if it is using the camera
         if(requestCode == 142){
-            var bmp = data?.extras?.get("data") as Bitmap
-            imageViewS.setImageBitmap(bmp)
+
         }
         // checks if it is using the gallery
         if(requestCode == 150){
-            imageViewS.setImageURI(data?.data)
+            var bmp = data?.data
+            imageViewS.setImageURI(bmp)
         }
     }
 }
