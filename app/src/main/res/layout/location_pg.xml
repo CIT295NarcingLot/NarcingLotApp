@@ -36,7 +36,6 @@
 
     <!-- Adds sub banner-->
     <TextView
-            android:text="NARC-ING LOT"
             android:layout_width="329dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -224,5 +223,13 @@
             android:layout_marginBottom="122dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="158dp" android:layout_marginStart="158dp" android:layout_marginEnd="165dp"
             android:layout_marginRight="165dp" app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/nlbanner"
+            android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"/>
 
 </android.support.constraint.ConstraintLayout>
