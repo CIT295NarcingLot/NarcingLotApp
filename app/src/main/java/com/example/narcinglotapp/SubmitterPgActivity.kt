@@ -2,6 +2,7 @@ package com.example.narcinglotapp
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -110,13 +111,15 @@ class SubmitterPgActivity : AppCompatActivity() {
             dlnumenter.setText("")
             dlstateenter.setText("")
         }
-
+        var currentPhotoPath : String
+        var filename : String
         @Throws(IOException::class)
         fun createImageFile(): File {
-            var currentPhotoPath : String
+
             // Create an image file name
             val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-            val storageDir: File = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            filename = "JPEG_${timeStamp}_.jpg"
             return File.createTempFile(
                 "JPEG_${timeStamp}_", /* prefix */
                 ".jpg", /* suffix */
@@ -137,7 +140,7 @@ class SubmitterPgActivity : AppCompatActivity() {
                 null
             }
             photoFile?.also {
-                val photoURL: Uri = FileProvider.getUriForFile(this, "com.example.narcinglotapp.file", it)
+                val photoURL: Uri = FileProvider.getUriForFile(this, "com.example.android.fileprovider", it)
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURL)
                 startActivityForResult(takePictureIntent, 142)
             }
@@ -192,7 +195,8 @@ class SubmitterPgActivity : AppCompatActivity() {
                     "\nZIP - " + zip +
                     "\nD/L# - " + dlnum +
                     "\nD/L State - " + dlstate)
-            //email.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile())
+            //var filelocation : File =  File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename)
+            //email.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile(filelocation))
 
             startActivity(email)
         }
