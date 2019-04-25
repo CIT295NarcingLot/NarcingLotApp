@@ -54,7 +54,7 @@ class SubmitterPgActivity : AppCompatActivity() {
         fraudButton.setOnClickListener{
             val builder = AlertDialog.Builder(this@SubmitterPgActivity)
             builder.setTitle("FRAUD AGREEMENT")
-            builder.setMessage("Legal Information will Display here.")
+            builder.setMessage("By submitting this form, you, the user, affirm that no fraud, error, omission, misrepresentation, negligence or the similar has taken place in the connection to nor the origination of this submission.  Faudulent user submissions are subject to limited legal action. Submitting user assumes all responsibility and liability for his/her fraudulent submissions.")
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }
