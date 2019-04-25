@@ -28,7 +28,7 @@ class SubmitterPgActivity : AppCompatActivity() {
             citysubenter.setText("")
             zipsubenter.setText("")
             dlnumenter.setText("")
-            dlstateenter.setText("")
+
         }
 
         Submitbtn.setOnClickListener{
@@ -40,7 +40,8 @@ class SubmitterPgActivity : AppCompatActivity() {
                 citysubenter.text.toString()=="" ||
                 zipsubenter.text.toString()=="" ||
                 dlnumenter.text.toString()=="" ||
-                dlstateenter.text.toString()=="" ||
+
+                Subspinner.selectedItem.equals("Select One") ||
                 Subspinner.selectedItem.equals("Select One") ||
                 checkBox2.isChecked!=true) {
                     val builder = AlertDialog.Builder(this@SubmitterPgActivity)
