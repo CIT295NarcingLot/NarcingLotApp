@@ -21,7 +21,6 @@ class OffenderPgActivity : AppCompatActivity() {
                 ModelEnter.text.toString()=="" ||
                 ColorEnter.text.toString()=="" ||
                 PlateEnter.text.toString()=="" ||
-                VINEnter.text.toString()=="" ||
                 Offspinner.selectedItem.equals("Select One")){
                     val builder = AlertDialog.Builder(this@OffenderPgActivity)
                     builder.setTitle("FORM INCOMPLETE")
@@ -39,7 +38,7 @@ class OffenderPgActivity : AppCompatActivity() {
             ModelEnter.setText("")
             ColorEnter.setText("")
             PlateEnter.setText("")
-            VINEnter.setText("")
+
         }
     }
 }
