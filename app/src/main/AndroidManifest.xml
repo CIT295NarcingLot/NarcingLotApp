@@ -7,7 +7,8 @@
     <uses-feature android:name="android.hardware.camera"
                   android:required="true" />
     <!-- Gives the app permission to read and write in the storage -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                                    android:maxSdkVersion="18"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 

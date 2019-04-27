@@ -1,11 +1,10 @@
 package com.example.narcinglotapp
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.os.Environment.getExternalStoragePublicDirectory
 import android.provider.MediaStore
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
@@ -15,6 +14,7 @@ import java.io.IOException
 import java.net.URI
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 // Creates the Submitter instance and is required for an activity
 class SubmitterPgActivity : AppCompatActivity() {
@@ -112,30 +112,26 @@ class SubmitterPgActivity : AppCompatActivity() {
             dlstateenter.setText("")
         }
         var currentPhotoPath : String
-        var filename : String
+        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         @Throws(IOException::class)
         fun createImageFile(): File {
 
             // Create an image file name
-            val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-            val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-            filename = "JPEG_${timeStamp}_.jpg"
-            return File.createTempFile(
-                "JPEG_${timeStamp}_", /* prefix */
-                ".jpg", /* suffix */
-                storageDir /* directory */
-            ).apply {
-                // Save a file: path for use with ACTION_VIEW intents
-                currentPhotoPath = absolutePath
-            }
+            var fileName  = File(storageDir,"JPEG_${timeStamp}.jpg")
+
+
+            return fileName
         }
 
+        var fileStorename = createImageFile()
+        var fileFindname = fileStorename.toString()
         // creates an on click listener for the open camera button that opens the camera
         cameraButtonS.setOnClickListener{
             // this opens up the default camera app on the phone
             var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             val photoFile: File? = try {
-                createImageFile()
+                fileStorename
             }catch (ex: IOException) {
                 null
             }
@@ -145,6 +141,8 @@ class SubmitterPgActivity : AppCompatActivity() {
                 startActivityForResult(takePictureIntent, 142)
             }
         }
+
+
 
         // creates an on click listener for the pick picture button that opens the gallery
         pickPButtonS.setOnClickListener{
@@ -165,15 +163,16 @@ class SubmitterPgActivity : AppCompatActivity() {
             val dlstate = dlstateenter.text.toString()
             val spinnerS = spinner2.getSelectedItem().toString()
             val senderEmail = arrayOf<String>("fakeEmail@fakeEmail.com")
-            var email = Intent(android.content.Intent.ACTION_SEND)
+            var email = Intent(Intent.ACTION_SEND)
             // sets text type
-            email.setType("plain/text")
-            email.putExtra(android.content.Intent.EXTRA_EMAIL, senderEmail)
+            email.setType("vnd.android.cursor.dir/email")
+            email.putExtra(Intent.EXTRA_EMAIL, senderEmail)
 
             //fills the subject bar
-            email.putExtra(android.content.Intent.EXTRA_SUBJECT, "Narcing Lot Offender Report")
+            email.putExtra(Intent.EXTRA_SUBJECT, "Narcing Lot Offender Report")
             // fills the text area
-            email.putExtra(android.content.Intent.EXTRA_TEXT, "Offender INFO: \n " +
+            email.putExtra(
+                Intent.EXTRA_TEXT, "Offender INFO: \n " +
                     "Make - " + sMake +
                     "\nModel - " + sModel +
                     "\nColor - " + sColor +
@@ -194,9 +193,10 @@ class SubmitterPgActivity : AppCompatActivity() {
                     "\nState - " + spinnerS +
                     "\nZIP - " + zip +
                     "\nD/L# - " + dlnum +
-                    "\nD/L State - " + dlstate)
-            //var filelocation : File =  File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename)
-            //email.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile(filelocation))
+                    "\nD/L State - " + dlstate + fileFindname)
+
+            //var path = Uri.parse(fileFindname)
+            //email.putExtra(Intent.EXTRA_STREAM, path)
 
             startActivity(email)
         }
