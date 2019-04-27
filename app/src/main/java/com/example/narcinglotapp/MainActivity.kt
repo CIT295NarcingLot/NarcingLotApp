@@ -13,23 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //FORM COMPLETION
-        SignInButton.isEnabled=false;
-        if(usernamein.toString()!="" && passwordin.toString()!=""){
-            SignInButton.isEnabled=true;
-        }
+
 
         //TESTING HOMESCREEN BRANCH
 
         // Sends user to Offender Page
-        SignInButton.setOnClickListener{
+        IVSplash.setOnClickListener{
             val intent = Intent(this, OffenderPgActivity :: class.java)
             startActivity(intent)
         }
 
         // Sends user to Offender Page
-        GuestButton.setOnClickListener{
-            val intent = Intent(this, OffenderPgActivity :: class.java)
-            startActivity(intent)
-        }
+
     }
 }
