@@ -354,6 +354,7 @@
             app:layout_constraintTop_toBottomOf="@+id/zipsub" android:layout_marginTop="20dp"/>
 
     <!--DRIVERS LIC STATE INPUT-->
+<<<<<<< HEAD
     <EditText
             android:layout_width="152dp"
             android:layout_height="40dp"
@@ -364,6 +365,8 @@
             android:id="@+id/dlstateenter"
             app:layout_constraintStart_toEndOf="@+id/fname"
             app:layout_constraintTop_toBottomOf="@+id/dlnum" android:layout_marginTop="4dp"/>
+=======
+>>>>>>> Spinner2SubPg
 
     <!--LABEL  UPLOAD PICK OF DRIVERS LIC-->
     <TextView
@@ -390,6 +393,14 @@
             android:id="@+id/imageView3" app:layout_constraintStart_toStartOf="@+id/view"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="@+id/view" app:layout_constraintEnd_toEndOf="@+id/view"/>
+    <Spinner
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Subspinner2" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/dlnumenter" app:layout_constraintStart_toEndOf="@+id/dlstate"
+            app:layout_constraintEnd_toEndOf="@+id/view" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.236"
+            android:entries="@array/state_list"/>
 
     <!-- Adds a button to reset the page -->
 <<<<<<< HEAD

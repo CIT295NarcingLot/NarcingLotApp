@@ -114,7 +114,7 @@ class SubmitterPgActivity : AppCompatActivity() {
             citysubenter.setText("")
             zipsubenter.setText("")
             dlnumenter.setText("")
-            dlstateenter.setText("")
+
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -234,7 +234,8 @@ class SubmitterPgActivity : AppCompatActivity() {
                 citysubenter.text.toString()=="" ||
                 zipsubenter.text.toString()=="" ||
                 dlnumenter.text.toString()=="" ||
-                dlstateenter.text.toString()=="" ||
+
+                Subspinner.selectedItem.equals("Select One") ||
                 Subspinner.selectedItem.equals("Select One") ||
                 checkBox2.isChecked!=true) {
                     val builder = AlertDialog.Builder(this@SubmitterPgActivity)
@@ -249,7 +250,7 @@ class SubmitterPgActivity : AppCompatActivity() {
         fraudButton.setOnClickListener{
             val builder = AlertDialog.Builder(this@SubmitterPgActivity)
             builder.setTitle("FRAUD AGREEMENT")
-            builder.setMessage("Legal Information will Display here.")
+            builder.setMessage("By submitting this form, you, the user, affirm that no fraud, error, omission, misrepresentation, negligence or the similar has taken place in the connection to nor the origination of this submission.  Faudulent user submissions are subject to limited legal action. Submitting user assumes all responsibility and liability for his/her fraudulent submissions.")
             val dialog: AlertDialog = builder.create()
             dialog.show()
 >>>>>>> origin/FraudBS
