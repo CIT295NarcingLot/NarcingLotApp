@@ -7,6 +7,15 @@
                                              android:layout_height="match_parent"
                                              android:background="@drawable/gradient">
     <!--WHITE BOX-->
+    <View
+            android:layout_width="325dp"
+            android:layout_height="669dp"
+            android:background="#ffffff"
+            android:id="@+id/view" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:visibility="visible"/>
     <CheckBox
             android:text="I Agree"
             android:layout_width="wrap_content"
@@ -24,15 +33,6 @@
             app:layout_constraintStart_toStartOf="@+id/view" app:layout_constraintBottom_toTopOf="@+id/resetButton"
             android:layout_marginBottom="28dp" app:layout_constraintHorizontal_bias="0.196"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/button5"/>
-    <View
-            android:layout_width="325dp"
-            android:layout_height="669dp"
-            android:background="#ffffff"
-            android:id="@+id/view" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:visibility="visible"/>
 
     <!--PREVIOUS PAGE BUTTON-->
     <Button
@@ -269,8 +269,12 @@
 =======
             app:layout_constraintStart_toEndOf="@+id/fname" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
+<<<<<<< HEAD
             app:layout_constraintTop_toBottomOf="@+id/SubmitterBanner" android:layout_marginTop="20dp"/>
 >>>>>>> origin/FraudBS
+=======
+            app:layout_constraintTop_toBottomOf="@+id/SubmitterSubB" android:layout_marginTop="8dp"/>
+>>>>>>> ContraintFix
 
     <!--SUBMITTER LAST NAME-->
     <EditText
