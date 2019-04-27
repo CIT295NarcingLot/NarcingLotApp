@@ -13,7 +13,6 @@ class LocationPgActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.location_pg)
 
-<<<<<<< HEAD
         // stores values from other pages
         val lMake = intent.getStringExtra("Make");
         val lModel = intent.getStringExtra("Model")
@@ -45,15 +44,14 @@ class LocationPgActivity : AppCompatActivity() {
         streetEnter.setText(setAddress)
         cityEnter.setText(setCity)
         zipEnter.setText(setZip)
-=======
->>>>>>> origin/FormCompletion
+
 
 
         // Sends user to Submitter Page
         nextButton.setOnClickListener{
             val intent = Intent(this, SubmitterPgActivity :: class.java)
 
-<<<<<<< HEAD
+
             // turns the entered text into a variable to be used
             val location = locationEnter.text.toString()
             val address = streetEnter.text.toString()
@@ -73,7 +71,6 @@ class LocationPgActivity : AppCompatActivity() {
             intent.putExtra("Model", lModel)
             intent.putExtra("Color", lColor)
             intent.putExtra("Plate", lPlate)
-            intent.putExtra("Vin", lVin)
 
             // sends submitter values to next page
             intent.putExtra("FirstN", lFirst)
@@ -88,8 +85,7 @@ class LocationPgActivity : AppCompatActivity() {
             intent.putExtra("SpinnerO", spinnerO)
             intent.putExtra("SpinnerS", spinnerS)
 
-            startActivity(intent)
-=======
+
             //FORM COMPLETION
             if(locationEnter.text.toString()=="" ||
                streetEnter.text.toString()=="" ||
@@ -104,7 +100,7 @@ class LocationPgActivity : AppCompatActivity() {
                 }else {
                     startActivity(intent)
                 }
->>>>>>> origin/FormCompletion
+
         }
 
         // Sends user back to Offender Page

@@ -3,13 +3,13 @@ package com.example.narcinglotapp
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-<<<<<<< HEAD
 import android.provider.MediaStore
-=======
 import android.support.v7.app.AlertDialog
->>>>>>> origin/FormCompletion
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.offender_pg.*
+
+
+
 
 // Creates the Offender instance and is required for an activity
 class OffenderPgActivity : AppCompatActivity() {
@@ -22,7 +22,6 @@ class OffenderPgActivity : AppCompatActivity() {
         val setModel = intent.getStringExtra("Model")
         val setColor = intent.getStringExtra("Color")
         val setPlate = intent.getStringExtra("Plate")
-        val setVin = intent.getStringExtra("Vin")
 
         // stores values from other pages
         val oLocation = intent.getStringExtra("Location")
@@ -48,29 +47,26 @@ class OffenderPgActivity : AppCompatActivity() {
         ModelEnter.setText(setModel)
         ColorEnter.setText(setColor)
         PlateEnter.setText(setPlate)
-        VINEnter.setText(setVin)
 
 
         // Sends user to Location Page
         NextPgbtn.setOnClickListener{
             val intent = Intent(this, LocationPgActivity :: class.java)
 
-<<<<<<< HEAD
+
             // turns the entered text into a variable to be used
             val make = MakeEnter.text.toString()
             val model = ModelEnter.text.toString()
             val color = ColorEnter.text.toString()
             val plate = PlateEnter.text.toString()
-            val vin = VINEnter.text.toString()
 
-            val spinnerO = spinner.getSelectedItem().toString()
+            val spinnerO = Offspinner.getSelectedItem().toString()
 
             // sends offender values to next page
             intent.putExtra("Make", make)
             intent.putExtra("Model", model)
             intent.putExtra("Color", color)
             intent.putExtra("Plate", plate)
-            intent.putExtra("VIN", vin)
 
             // sends location values to next page
             intent.putExtra("Location", oLocation)
@@ -91,8 +87,6 @@ class OffenderPgActivity : AppCompatActivity() {
             intent.putExtra("SpinnerO", spinnerO)
             intent.putExtra("SpinnerS", spinnerS)
 
-            startActivity(intent)
-=======
             //FORM COMPLETION
             if(MakeEnter.text.toString()=="" ||
                 ModelEnter.text.toString()=="" ||
@@ -107,11 +101,10 @@ class OffenderPgActivity : AppCompatActivity() {
             }else {
                 startActivity(intent)
             }
->>>>>>> origin/FormCompletion
         }
 
         // Sets the entry fields to nothing
-        resetButtonO.setOnClickListener{
+        resetButton.setOnClickListener{
             MakeEnter.setText("")
             ModelEnter.setText("")
             ColorEnter.setText("")
@@ -120,14 +113,14 @@ class OffenderPgActivity : AppCompatActivity() {
         }
 
         // creates an on click listener for the open camera button that calls the open camera function
-        cameraButtonO.setOnClickListener{
+        button.setOnClickListener{
             // this opens up the default camera app on the phone
             var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePictureIntent, 142)
         }
 
         // creates an on click listener for the pick picture button that opens the gallery
-        pickPButtonO.setOnClickListener{
+        button2.setOnClickListener{
             // opens the gallery to get a picture
             val pickPictureIntent = Intent(Intent.ACTION_PICK)
             pickPictureIntent.type = "image/*"
@@ -136,7 +129,7 @@ class OffenderPgActivity : AppCompatActivity() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // checks if it is using the camera
         if(requestCode == 142){
@@ -148,7 +141,7 @@ class OffenderPgActivity : AppCompatActivity() {
             imageViewO.setImageURI(data?.data)
         }
 
-    }
+    }*/
 
 
 }
