@@ -1,5 +1,6 @@
 package com.example.narcinglotapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -111,6 +112,7 @@ class SubmitterPgActivity : AppCompatActivity() {
             dlnumenter.setText("")
             dlstateenter.setText("")
         }
+<<<<<<< HEAD
         var currentPhotoPath : String
         val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
@@ -215,6 +217,15 @@ class SubmitterPgActivity : AppCompatActivity() {
         if(requestCode == 150){
             var bmp = data?.data
             imageViewS.setImageURI(bmp)
+=======
+        //FRAUD AGREEMENT
+        fraudButton.setOnClickListener{
+            val builder = AlertDialog.Builder(this@SubmitterPgActivity)
+            builder.setTitle("FRAUD AGREEMENT")
+            builder.setMessage("Legal Information will Display here.")
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+>>>>>>> origin/FraudBS
         }
     }
 }
