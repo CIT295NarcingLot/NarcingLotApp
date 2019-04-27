@@ -275,6 +275,7 @@
             android:layout_height="40dp"
             android:inputType="textPersonName"
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/subfn"
 <<<<<<< HEAD
             app:layout_constraintStart_toEndOf="@+id/fname"
@@ -297,6 +298,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/lnsub"
             app:layout_constraintTop_toBottomOf="@+id/subfn" app:layout_constraintStart_toEndOf="@+id/fname"
     />
@@ -308,6 +310,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/addsub"
             app:layout_constraintTop_toBottomOf="@+id/lnsub"
             app:layout_constraintStart_toEndOf="@+id/fname"
@@ -320,6 +323,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/citysubenter"
             app:layout_constraintTop_toBottomOf="@+id/addsub"
             app:layout_constraintStart_toEndOf="@+id/fname"/>
@@ -333,6 +337,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/zipsubenter"
             app:layout_constraintTop_toBottomOf="@+id/statesub" app:layout_constraintStart_toEndOf="@+id/fname"
             android:layout_marginTop="16dp"/>
@@ -344,6 +349,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/dlnumenter"
             app:layout_constraintStart_toEndOf="@+id/fname"
             app:layout_constraintTop_toBottomOf="@+id/zipsub" android:layout_marginTop="20dp"/>
@@ -355,6 +361,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
+            android:textSize="17sp"
             android:id="@+id/dlstateenter"
             app:layout_constraintStart_toEndOf="@+id/fname"
             app:layout_constraintTop_toBottomOf="@+id/dlnum" android:layout_marginTop="4dp"/>
