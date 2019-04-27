@@ -8,7 +8,8 @@
 
     <!-- STATES FOR DROPDOWN -->
     <string-array name="state_list">
-        <item>AL</item> <item>AK</item> <item>AR</item><item>AZ</item> <item>CA</item>
+        <item>Select One</item>
+        <item>AL</item> <item>AK</item> <item>AR</item> <item>AZ</item> <item>CA</item>
         <item>CO</item> <item>CT</item> <item>DE</item> <item>FL</item> <item>GA</item>
         <item>HI</item> <item>IA</item> <item>ID</item> <item>IL</item> <item>IN</item>
         <item>KS</item> <item>KY</item> <item>LA</item> <item>MA</item><item>MD</item>

@@ -2,6 +2,7 @@ package com.example.narcinglotapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.location_pg.*
 import java.util.zip.ZipEntry
@@ -12,6 +13,7 @@ class LocationPgActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.location_pg)
 
+<<<<<<< HEAD
         // stores values from other pages
         val lMake = intent.getStringExtra("Make");
         val lModel = intent.getStringExtra("Model")
@@ -43,12 +45,15 @@ class LocationPgActivity : AppCompatActivity() {
         streetEnter.setText(setAddress)
         cityEnter.setText(setCity)
         zipEnter.setText(setZip)
+=======
+>>>>>>> origin/FormCompletion
 
 
         // Sends user to Submitter Page
         nextButton.setOnClickListener{
             val intent = Intent(this, SubmitterPgActivity :: class.java)
 
+<<<<<<< HEAD
             // turns the entered text into a variable to be used
             val location = locationEnter.text.toString()
             val address = streetEnter.text.toString()
@@ -84,6 +89,22 @@ class LocationPgActivity : AppCompatActivity() {
             intent.putExtra("SpinnerS", spinnerS)
 
             startActivity(intent)
+=======
+            //FORM COMPLETION
+            if(locationEnter.text.toString()=="" ||
+               streetEnter.text.toString()=="" ||
+               cityEnter.text.toString()=="" ||
+               zipEnter.text.toString()=="" ||
+               Statespinner.selectedItem.equals("Select One")){
+                        val builder = AlertDialog.Builder(this@LocationPgActivity)
+                        builder.setTitle("FORM INCOMPLETE")
+                        builder.setMessage("Please complete all fields before moving to the next page.")
+                        val dialog: AlertDialog = builder.create()
+                        dialog.show()
+                }else {
+                    startActivity(intent)
+                }
+>>>>>>> origin/FormCompletion
         }
 
         // Sends user back to Offender Page

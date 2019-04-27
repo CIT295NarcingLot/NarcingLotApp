@@ -23,6 +23,7 @@ class SubmitterPgActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.submitter_pg)
 
+<<<<<<< HEAD
         // stores values from other pages
         val sMake = intent.getStringExtra("Make");
         val sModel = intent.getStringExtra("Model")
@@ -57,6 +58,9 @@ class SubmitterPgActivity : AppCompatActivity() {
         zipsubenter.setText(setHzip)
         dlnumenter.setText(setDLnum)
         dlstateenter.setText(setDLstate)
+=======
+
+>>>>>>> origin/FormCompletion
 
         // Sends user back to Location Page
         PreButton.setOnClickListener{
@@ -112,6 +116,7 @@ class SubmitterPgActivity : AppCompatActivity() {
             dlnumenter.setText("")
             dlstateenter.setText("")
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         var currentPhotoPath : String
         val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
@@ -218,6 +223,28 @@ class SubmitterPgActivity : AppCompatActivity() {
             var bmp = data?.data
             imageViewS.setImageURI(bmp)
 =======
+=======
+
+        Submitbtn.setOnClickListener{
+
+            //FORM COMPLETION
+            if(subfn.text.toString()=="" ||
+                lnsub.text.toString()=="" ||
+                addsub.text.toString()=="" ||
+                citysubenter.text.toString()=="" ||
+                zipsubenter.text.toString()=="" ||
+                dlnumenter.text.toString()=="" ||
+                dlstateenter.text.toString()=="" ||
+                Subspinner.selectedItem.equals("Select One") ||
+                checkBox2.isChecked!=true) {
+                    val builder = AlertDialog.Builder(this@SubmitterPgActivity)
+                    builder.setTitle("FORM INCOMPLETE")
+                    builder.setMessage("Please complete all fields before moving to the next page.")
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+            }
+        }
+>>>>>>> origin/FormCompletion
         //FRAUD AGREEMENT
         fraudButton.setOnClickListener{
             val builder = AlertDialog.Builder(this@SubmitterPgActivity)

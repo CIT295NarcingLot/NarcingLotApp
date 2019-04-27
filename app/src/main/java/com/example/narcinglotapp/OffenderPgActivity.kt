@@ -3,7 +3,11 @@ package com.example.narcinglotapp
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+<<<<<<< HEAD
 import android.provider.MediaStore
+=======
+import android.support.v7.app.AlertDialog
+>>>>>>> origin/FormCompletion
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.offender_pg.*
 
@@ -51,6 +55,7 @@ class OffenderPgActivity : AppCompatActivity() {
         NextPgbtn.setOnClickListener{
             val intent = Intent(this, LocationPgActivity :: class.java)
 
+<<<<<<< HEAD
             // turns the entered text into a variable to be used
             val make = MakeEnter.text.toString()
             val model = ModelEnter.text.toString()
@@ -87,6 +92,23 @@ class OffenderPgActivity : AppCompatActivity() {
             intent.putExtra("SpinnerS", spinnerS)
 
             startActivity(intent)
+=======
+            //FORM COMPLETION
+            if(MakeEnter.text.toString()=="" ||
+                ModelEnter.text.toString()=="" ||
+                ColorEnter.text.toString()=="" ||
+                PlateEnter.text.toString()=="" ||
+                VINEnter.text.toString()=="" ||
+                Offspinner.selectedItem.equals("Select One")){
+                    val builder = AlertDialog.Builder(this@OffenderPgActivity)
+                    builder.setTitle("FORM INCOMPLETE")
+                    builder.setMessage("Please complete all fields before moving to the next page.")
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
+            }else {
+                startActivity(intent)
+            }
+>>>>>>> origin/FormCompletion
         }
 
         // Sets the entry fields to nothing
